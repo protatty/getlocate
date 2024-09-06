@@ -11,6 +11,7 @@
   function getLocation() {
     // Если геолокация поддерживается браузером
     if (navigator.geolocation) {
+      alert(5);
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
       document.getElementById("location").innerHTML = "Геолокация не поддерживается.";
@@ -18,7 +19,6 @@
   }
 
   function showPosition(position) {
-    alert(5);
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     alert(lat);
