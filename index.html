@@ -8,15 +8,16 @@
  <p id="locat"></p> 
  <h1>hi</h1>
  <script>
-  
+ 	 
  document.getElementById("locat").innerHTML = "xxxxxxxxxxxxxx";
  function getLocation() {
     // Если геолокация поддерживается браузером
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, geolocationFailure);
-    } else {
+      } else {
+      
       document.getElementById("location").innerHTML = "Геолокация не поддерживается.";
-    }
+      }
   }
 
  function showPosition(position) {
@@ -35,7 +36,7 @@
 		        "местоположения по каким-либо другим причинам.";
 	}
 	else if(positionError == 3) {
-		rdocument.getElementById("location").innerHTM = "He удалось определить местоположение " 
+		document.getElementById("location").innerHTM = "He удалось определить местоположение " 
 		        + "в течение установленного времени. ";
 
 	}
