@@ -2,13 +2,16 @@
 <head>
 <script>
 import android.webkit.WebSettings;
-webSettings.setGeolocationEnabled(true);
-InAppWebView(
-        onGeolocationPermissionsShowPrompt: (webViewController, origin) async {
-          return GeolocationPermissionShowPromptResponse(
-              allow: true, origin: origin, retain: true);
-        },
-)	
+WebView myWebView = findViewById(R.id.webview);
+WebSettings webSettings = myWebView.getSettings();
+webSettings.setJavaScriptEnabled(true);
+webSettings.setGeolocationEnabled(true); // Enable geolocation
+
+webView.setWebChromeClient(new WebChromeClient() {
+ public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+    callback.invoke(origin, true, false);
+ }
+});	
 </script>	
 </head>
 <body>
