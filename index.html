@@ -6,7 +6,7 @@
  function getLocation() {
     // Если геолокация поддерживается браузером
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition, geolocationFailure);
+      navigator.geolocation.getCurrentPosition(showPosition,geolocationFailure);
       } else {
       
       document.getElementById("location").innerHTML = "Геолокация не поддерживается.";
