@@ -10,12 +10,7 @@
 <p id="location"></p>
 <p id="locat"></p>
 
- <script>
-webView.setWebChromeClient(new WebChromeClient() {
- public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
-    callback.invoke(origin, true, false);
- }
-});
+
 
 	 
  document.getElementById("locat").innerHTML = "xxxxxxxxxxx";
