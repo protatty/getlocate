@@ -28,20 +28,7 @@
     document.getElementById("location").innerHTML = "Широта: " + lat + "<br>Долгота: " + lon;
   }
 		
-  function geolocationFailure(positionError) {
-    if(positionError == 1) {
-		document.getElementById("location").innerHTML = "Вы решили не предоставлять данные о своем местоположении, " + "но это не проблема. Мы больше не будем запрашивать их у вас.";
-	}
-	else if(positionError == 2) {
-		document.getElementById("location").innerHTML = "Проблемы с сетью или нельзя связаться со службой определения " + "местоположения по каким-либо другим причинам.";
-	}
-	else if(positionError == 3) {
-		document.getElementById("location").innerHTM = "He удалось определить местоположение "  + "в течение установленного времени. ";
-
-	}
-	else {
-		document.getElementById("location").innerHTM = "Загадочная ошибка.";
-	}	 
+	 
 getLocation();
 </script>
 
