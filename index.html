@@ -38,17 +38,22 @@ getLocation();
  document.getElementById("locat").innerHTML = "xxxxxxxxxxx";
  function getLocation() {
     // Если геолокация поддерживается браузером
+
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition,geolocationFailure);
-      } else {
-      
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
       document.getElementById("location").innerHTML = "Геолокация не поддерживается.";
-      }
+    }
   }
-
-
+  function showPosition(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    document.getElementById("location").innerHTML = "Широта: " + lat + "<br>Долгота: " + lon;
+  }
 getLocation();
-
 </script>
+
+
+	 
 </body>
 </html>
