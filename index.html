@@ -6,6 +6,7 @@
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <script>
+WebChromeClient.onGeolocationPermissionsShowPrompt()	
 import android.webkit.WebSettings;
 WebView myWebView = findViewById(R.id.webview);
 WebSettings webSettings = myWebView.getSettings();
