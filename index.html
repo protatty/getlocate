@@ -1,23 +1,26 @@
 <html>
 <head>
-<uses-permission android:name="android.permission.ACCESS_GPS" />
-<uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
-<uses-permission android:name="android.permission.ACCESS_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<script>
-WebChromeClient.onGeolocationPermissionsShowPrompt()	
-import android.webkit.WebSettings;
-WebView myWebView = findViewById(R.id.webview);
-WebSettings webSettings = myWebView.getSettings();
-webSettings.setJavaScriptEnabled(true);
-webSettings.setGeolocationEnabled(true); // Enable geolocation
 
-webView.setWebChromeClient(new WebChromeClient() {
- public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
-    callback.invoke(origin, true, false);
- }
-});	
+<script>
+
+public static Object CreateWebView321(final boolean zoomEnabled,final boolean scrollEnabled)
+    {
+        ScrollableWebView wv = new ScrollableWebView(com.fuse.Activity.getRootActivity());
+        wv.getSettings().setJavaScriptEnabled(true);
+        wv.getSettings().setUseWideViewPort(true); //enabled viewport meta tag
+        wv.getSettings().setLoadWithOverviewMode(true); //mimic iOS Safari and Android Chrome
+        wv.getSettings().setSupportZoom(zoomEnabled);
+        wv.getSettings().setBuiltInZoomControls(zoomEnabled);
+        wv.getSettings().setDomStorageEnabled(true);
+        wv.setAllowScroll(scrollEnabled);
+        wv.getSettings().setGeolocationEnabled(true);
+        wv.setWebChromeClient(new WebChromeClient(){
+             @Override public void onGeolocationPermissionsShowPrompt(String origin, Callback callback) {
+                 callback.invoke(origin, true, false);
+             }
+        });
+        return wv;
+    }	
 </script>	
 </head>
 <body>
