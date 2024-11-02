@@ -9,8 +9,8 @@
  <h1>hi</h1>
  <script>
   
-  document.getElementById("locat").innerHTML = "xxxxxxxxxxxxxx";
-  function getLocation() {
+ document.getElementById("locat").innerHTML = "xxxxxxxxxxxxxx";
+ function getLocation() {
     // Если геолокация поддерживается браузером
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, geolocationFailure);
@@ -19,7 +19,7 @@
     }
   }
 
-  function showPosition(position) {
+ function showPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     document.getElementById("location").innerHTML = "Широта: " + lat + "<br>Долгота: " + lon;
