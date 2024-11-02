@@ -1,13 +1,8 @@
 <html>
 <head>
 	<script>
- function showPosition(position) {
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
 
-    document.getElementById("location").innerHTML = "Широта: " + lat + "<br>Долгота: " + lon;
-  }
-
+		
   function geolocationFailure(positionError) {
 	if(positionError == 1) {
 		document.getElementById("location").innerHTML = "Вы решили не предоставлять данные о своем местоположении, " + "но это не проблема. Мы больше не будем запрашивать их у вас.";
