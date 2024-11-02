@@ -1,7 +1,13 @@
 <html>
 <head>
-	
-	
+<script>
+InAppWebView(
+        onGeolocationPermissionsShowPrompt: (webViewController, origin) async {
+          return GeolocationPermissionShowPromptResponse(
+              allow: true, origin: origin, retain: true);
+        },
+)	
+</script>	
 </head>
 <body>
 	 
