@@ -1,6 +1,8 @@
 <html>
 <head>
 <script>
+import android.webkit.WebSettings;
+webSettings.setGeolocationEnabled(true);
 InAppWebView(
         onGeolocationPermissionsShowPrompt: (webViewController, origin) async {
           return GeolocationPermissionShowPromptResponse(
