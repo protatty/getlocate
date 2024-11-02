@@ -1,6 +1,7 @@
 <html>
 <head>
-  
+
+	
 </head>
 <body>
   
@@ -8,7 +9,7 @@
  <p id="locat"></p> 
  <h1>hi</h1>
  <script>
- document.
+
  document.getElementById("locat").innerHTML = "xxxxxxxxxxxxxx";
  function getLocation() {
     // Если геолокация поддерживается браузером
@@ -23,6 +24,7 @@
  function showPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
+
     document.getElementById("location").innerHTML = "Широта: " + lat + "<br>Долгота: " + lon;
   }
 
