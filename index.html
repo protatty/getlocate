@@ -1,27 +1,7 @@
 <html>
 <head>
 
-<script>
-
-public static Object CreateWebView321(final boolean zoomEnabled,final boolean scrollEnabled)
-    {
-        ScrollableWebView wv = new ScrollableWebView(com.fuse.Activity.getRootActivity());
-        wv.getSettings().setJavaScriptEnabled(true);
-        wv.getSettings().setUseWideViewPort(true); //enabled viewport meta tag
-        wv.getSettings().setLoadWithOverviewMode(true); //mimic iOS Safari and Android Chrome
-        wv.getSettings().setSupportZoom(zoomEnabled);
-        wv.getSettings().setBuiltInZoomControls(zoomEnabled);
-        wv.getSettings().setDomStorageEnabled(true);
-        wv.setAllowScroll(scrollEnabled);
-        wv.getSettings().setGeolocationEnabled(true);
-        wv.setWebChromeClient(new WebChromeClient(){
-             @Override public void onGeolocationPermissionsShowPrompt(String origin, Callback callback) {
-                 callback.invoke(origin, true, false);
-             }
-        });
-        return wv;
-    }	
-</script>	
+	
 </head>
 <body>
 	 
